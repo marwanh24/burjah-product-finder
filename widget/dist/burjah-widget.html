@@ -1,0 +1,4950 @@
+<!-- مساعد بُرجة العربية للاختيار — يُلصق كاملاً في خانة "محتوى HTML" بمحرر ثيم سلة. -->
+<!-- قبل اللصق: عدّل رابط LIVE_JSON_URL داخل app.js (أسفل هذا الملف) إلى رابط خدمة Render الفعلي بعد نشرها. -->
+<div data-burjah-widget class="burjah-widget"></div>
+<style>
+/* مساعد بُرجة العربية — أنماط الويدجت. الهوية: كحلي #1d4669 + برتقالي #ff9933 (logic_prompt.md §22.1) */
+.burjah-widget {
+  --navy: #1d4669;
+  --navy-dark: #143349;
+  --orange: #ff9933;
+  --beige: #faf3e9;
+  --beige-2: #f3e6d3;
+  --gray: #6b7280;
+  --border: #e7ddcd;
+  --white: #ffffff;
+  direction: rtl;
+  font-family: "Tajawal", "Segoe UI", Tahoma, Arial, sans-serif;
+  background: var(--beige);
+  color: var(--navy-dark);
+  border-radius: 20px;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  line-height: 1.6;
+}
+.burjah-widget * { box-sizing: border-box; }
+.burjah-widget button { font-family: inherit; cursor: pointer; }
+
+.bw-hidden { display: none !important; }
+
+/* ---------- الشاشة 1: البداية ---------- */
+.bw-hero {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  gap: 24px;
+  background: var(--white);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid var(--border);
+}
+.bw-hero-content { flex: 1 1 320px; min-width: 260px; }
+.bw-hero-media { flex: 1 1 240px; min-width: 200px; text-align: center; }
+.bw-hero-media img { max-width: 100%; border-radius: 16px; }
+.bw-eyebrow { color: var(--orange); font-weight: 700; font-size: 0.95rem; margin: 0 0 8px; }
+.bw-title { color: var(--navy); font-size: 1.8rem; font-weight: 800; margin: 0 0 10px; }
+.bw-subtitle { color: var(--gray); font-size: 1rem; margin: 0 0 20px; }
+.bw-cta {
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: inline-block;
+}
+.bw-cta:hover { background: var(--navy-dark); }
+
+.bw-trust-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+.bw-trust-item {
+  flex: 1 1 140px;
+  background: var(--beige);
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--navy-dark);
+}
+
+.bw-how {
+  margin-top: 24px;
+  border-top: 1px dashed var(--border);
+  padding-top: 18px;
+}
+.bw-how h3 { color: var(--navy); font-size: 1rem; margin: 0 0 12px; }
+.bw-how-step { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; }
+.bw-how-num {
+  flex: none;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem;
+}
+
+/* ---------- الشاشات 2-6: الأسئلة ---------- */
+.bw-question-screen {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid var(--border);
+}
+.bw-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.bw-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
+.bw-dot.is-active { background: var(--orange); }
+.bw-dot.is-done { background: var(--navy); }
+.bw-progress-label { font-size: 0.8rem; color: var(--gray); margin-inline-start: 6px; }
+.bw-question-title { color: var(--navy); font-size: 1.3rem; font-weight: 800; margin: 14px 0 18px; }
+
+.bw-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+.bw-option {
+  background: var(--beige);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 16px 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy-dark);
+  position: relative;
+  transition: border-color .15s ease;
+}
+.bw-option:hover { border-color: var(--border); }
+.bw-option.is-selected { border-color: var(--orange); background: var(--beige-2); }
+.bw-option.is-selected::after {
+  content: "✓";
+  position: absolute;
+  top: 6px; inset-inline-end: 8px;
+  color: var(--orange);
+  font-weight: 900;
+}
+.bw-option-icon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--beige-2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 8px;
+  font-size: 1.3rem;
+}
+.bw-option.is-selected .bw-option-icon { background: #ffe6c2; }
+
+.bw-color-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.bw-color-chip {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  font-size: 0.78rem; color: var(--navy-dark); font-weight: 600;
+  width: 74px;
+}
+.bw-color-swatch {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 3px solid transparent;
+}
+.bw-color-chip.is-selected .bw-color-swatch { border-color: var(--orange); }
+
+.bw-nav-row { display: flex; justify-content: space-between; margin-top: 24px; gap: 10px; }
+.bw-btn-secondary {
+  background: var(--beige-2);
+  color: var(--navy-dark);
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+}
+.bw-btn-primary {
+  background: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-weight: 700;
+}
+.bw-btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+
+.bw-budget-input {
+  width: 100%;
+  max-width: 260px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* ---------- الشاشة 7: النتائج ---------- */
+.bw-results-title { color: var(--navy); font-size: 1.4rem; font-weight: 800; text-align: center; margin: 6px 0 20px; }
+.bw-summary-line { text-align: center; color: var(--gray); font-size: 0.88rem; margin-bottom: 18px; }
+.bw-cards-row {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+@media (max-width: 720px) {
+  .bw-cards-row { flex-direction: column; }
+}
+.bw-card {
+  flex: 1 1 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.bw-card.is-best {
+  border-color: var(--orange);
+  box-shadow: 0 8px 20px rgba(255,153,51,.18);
+  transform: scale(1.02);
+}
+.bw-card-badge {
+  position: absolute;
+  top: -12px; right: 50%; transform: translateX(50%);
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.bw-card-role { font-size: 0.78rem; color: var(--gray); text-align: center; margin-bottom: 6px; }
+.bw-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 12px; background: var(--beige-2); }
+.bw-card-name { font-weight: 800; color: var(--navy); margin: 10px 0 4px; font-size: 1rem; }
+.bw-card-reason { font-size: 0.82rem; color: var(--gray); margin-bottom: 8px; min-height: 2.4em; }
+.bw-card-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+.bw-price-now { font-size: 1.15rem; font-weight: 800; color: var(--navy); }
+.bw-price-was { font-size: 0.85rem; color: var(--gray); text-decoration: line-through; }
+.bw-discount-badge { background: var(--orange); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; }
+.bw-card-colors { display: flex; gap: 6px; margin-bottom: 10px; }
+.bw-card-colors span { width: 16px; height: 16px; border-radius: 50%; border: 1px solid var(--border); }
+.bw-card-alert { font-size: 0.76rem; background: var(--beige); color: var(--navy-dark); border-radius: 8px; padding: 6px 8px; margin-bottom: 8px; }
+.bw-card-cta {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  background: var(--navy);
+  color: #fff;
+  padding: 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.bw-card.is-best .bw-card-cta-extra {
+  display: block;
+  text-align: center;
+  margin-top: 8px;
+  background: var(--orange);
+  color: #fff;
+  padding: 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.bw-size-note, .bw-availability-note {
+  font-size: 0.76rem;
+  color: var(--gray);
+  text-align: center;
+  margin-top: 6px;
+}
+
+.bw-suitable-colors {
+  margin-top: 22px;
+  text-align: center;
+}
+.bw-suitable-colors h4 { color: var(--navy); font-size: 0.95rem; margin-bottom: 10px; }
+.bw-suitable-colors-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.bw-suitable-color { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--navy-dark); }
+.bw-suitable-color span { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--border); }
+
+.bw-restart-row { text-align: center; margin-top: 18px; }
+.bw-restart-btn { background: none; border: none; color: var(--navy); font-weight: 700; font-size: 0.9rem; }
+
+/* ---------- حالات عامة ---------- */
+.bw-state-box {
+  background: var(--white);
+  border: 1px dashed var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+.bw-skeleton {
+  background: linear-gradient(90deg, var(--beige-2) 25%, var(--beige) 37%, var(--beige-2) 63%);
+  background-size: 400% 100%;
+  animation: bw-shimmer 1.4s ease infinite;
+  border-radius: 12px;
+  height: 16px;
+  margin: 8px 0;
+}
+@keyframes bw-shimmer {
+  0% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+</style>
+<script>
+window.BURJAH_PRODUCTS = {
+  "20869000": {
+    "id": 20869000,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "سماوي",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "22702539": {
+    "id": 22702539,
+    "excludeFromStandalone": true,
+    "family": "طقم العراقة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1179255884,
+      1097711035,
+      1172845662
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "35217922": {
+    "id": 35217922,
+    "family": "ميني سكارف",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "40711558": {
+    "id": 40711558,
+    "family": "ميني سكارف",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "66649037": {
+    "id": 66649037,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "70330785": {
+    "id": 70330785,
+    "family": "الأصالة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أوف وايت",
+    "colorCompat": "أوف وايت",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "94917960": {
+    "id": 94917960,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "106339781": {
+    "id": 106339781,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "119100182": {
+    "id": 119100182,
+    "family": "الساعات",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "167236188": {
+    "id": 167236188,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "198793024": {
+    "id": 198793024,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "240849998": {
+    "id": 240849998,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "241660433": {
+    "id": 241660433,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "247109260": {
+    "id": 247109260,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "249197326": {
+    "id": 249197326,
+    "family": "السبح الفاخرة",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "1-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "295316796": {
+    "id": 295316796,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "333405938": {
+    "id": 333405938,
+    "family": "بربتوز بيزنس كيدز",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "415690051": {
+    "id": 415690051,
+    "family": "بيزنس كيدز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "431600612": {
+    "id": 431600612,
+    "excludeFromStandalone": true,
+    "family": "طقم الأصالة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1740341873,
+      1423088233,
+      1579119821
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "442232196": {
+    "id": 442232196,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "475756765": {
+    "id": 475756765,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "488403802": {
+    "id": 488403802,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أوف وايت",
+    "season": null,
+    "colorType": [
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "520215680": {
+    "id": 520215680,
+    "family": "السبح الفاخرة",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "1-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "546634794": {
+    "id": 546634794,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "554285626": {
+    "id": 554285626,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "أسود",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "568900714": {
+    "id": 568900714,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "576778699": {
+    "id": 576778699,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "582169231": {
+    "id": 582169231,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "585654168": {
+    "id": 585654168,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أسود",
+    "season": null,
+    "colorType": [
+      "أسود"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "645064359": {
+    "id": 645064359,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "654522397": {
+    "id": 654522397,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "697801811": {
+    "id": 697801811,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "701586080": {
+    "id": 701586080,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "703135707": {
+    "id": 703135707,
+    "family": "كلاسيك 2",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "723936353": {
+    "id": 723936353,
+    "family": "نظارات أطفال",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "741262391": {
+    "id": 741262391,
+    "excludeFromStandalone": true,
+    "family": "طقم الأصالة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1740341873,
+      1423088233,
+      1579119821
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "759043357": {
+    "id": 759043357,
+    "family": "صندل جلد",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "804849479": {
+    "id": 804849479,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "812590588": {
+    "id": 812590588,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "819100028": {
+    "id": 819100028,
+    "family": "كلاسيك 2",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "863888434": {
+    "id": 863888434,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "882746827": {
+    "id": 882746827,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "889769611": {
+    "id": 889769611,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي غامق",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "890370559": {
+    "id": 890370559,
+    "family": "بيزنس كيدز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "892130700": {
+    "id": 892130700,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "898461215": {
+    "id": 898461215,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "922504616": {
+    "id": 922504616,
+    "family": "الرفعة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "946403147": {
+    "id": 946403147,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "948849211": {
+    "id": 948849211,
+    "family": "بربتوز",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "977782911": {
+    "id": 977782911,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1001685420": {
+    "id": 1001685420,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1016769486": {
+    "id": 1016769486,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1017816716": {
+    "id": 1017816716,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1035028448": {
+    "id": 1035028448,
+    "family": "بربتوز العز",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorType": [
+      "أسود"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1044989526": {
+    "id": 1044989526,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1071770541": {
+    "id": 1071770541,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1077118593": {
+    "id": 1077118593,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي فاتح",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1083042171": {
+    "id": 1083042171,
+    "family": "الشموخ",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كموني",
+    "colorCompat": "أوف وايت",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1097711035": {
+    "id": 1097711035,
+    "family": "العراقة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1644720348,
+      22702539,
+      1689370233
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1099615887": {
+    "id": 1099615887,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1101568151": {
+    "id": 1101568151,
+    "note": "بربتوز الهيبة — لا يدخل مسار الطقم، مواليد فقط",
+    "family": "بربتوز الهيبة",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1121657063": {
+    "id": 1121657063,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1126666114": {
+    "id": 1126666114,
+    "family": "الروشان",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1151913706": {
+    "id": 1151913706,
+    "family": "الأصالة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": null,
+    "colorCompat": "varies",
+    "ageGroup": "مواليد",
+    "isMawalid": true,
+    "excludeFromStandalone": false
+  },
+  "1172845662": {
+    "id": 1172845662,
+    "family": "العراقة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1644720348,
+      22702539,
+      1689370233
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1179255884": {
+    "id": 1179255884,
+    "family": "العراقة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1644720348,
+      22702539,
+      1689370233
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1197521945": {
+    "id": 1197521945,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "1205800622": {
+    "id": 1205800622,
+    "family": "السبح الفاخرة",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "1-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1215354434": {
+    "id": 1215354434,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1240365053": {
+    "id": 1240365053,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أبيض",
+    "season": null,
+    "colorType": [
+      "أبيض"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1249102644": {
+    "id": 1249102644,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كحلي",
+    "season": null,
+    "colorType": [
+      "كحلي"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1261663722": {
+    "id": 1261663722,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1264758411": {
+    "id": 1264758411,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أسود",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1276614974": {
+    "id": 1276614974,
+    "family": "الروشان",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1278897044": {
+    "id": 1278897044,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1286835428": {
+    "id": 1286835428,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1296795808": {
+    "id": 1296795808,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1307592319": {
+    "id": 1307592319,
+    "family": "الرفعة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "بيج",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1343028383": {
+    "id": 1343028383,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1361373483": {
+    "id": 1361373483,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "رصاصي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "1365148497": {
+    "id": 1365148497,
+    "family": "الشموخ",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أسود",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1385409065": {
+    "id": 1385409065,
+    "family": "الأصالة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كحلي",
+    "colorCompat": "أبيض",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1398977643": {
+    "id": 1398977643,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1423088233": {
+    "id": 1423088233,
+    "family": "الأصالة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1946293942,
+      431600612,
+      741262391
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1434664687": {
+    "id": 1434664687,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1451703347": {
+    "id": 1451703347,
+    "family": "الروشان",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1460807930": {
+    "id": 1460807930,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1509466944": {
+    "id": 1509466944,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1556743946": {
+    "id": 1556743946,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1563950401": {
+    "id": 1563950401,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1579119821": {
+    "id": 1579119821,
+    "family": "الأصالة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1946293942,
+      431600612,
+      741262391
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1602543628": {
+    "id": 1602543628,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "كحلي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "1608345848": {
+    "id": 1608345848,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1610404332": {
+    "id": 1610404332,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1611518259": {
+    "id": 1611518259,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "بيج كموني",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "1623074804": {
+    "id": 1623074804,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1627500556": {
+    "id": 1627500556,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "1644720348": {
+    "id": 1644720348,
+    "excludeFromStandalone": true,
+    "family": "طقم العراقة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1179255884,
+      1097711035,
+      1172845662
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1649130611": {
+    "id": 1649130611,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1668487917": {
+    "id": 1668487917,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1674818938": {
+    "id": 1674818938,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1677937890": {
+    "id": 1677937890,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1689370233": {
+    "id": 1689370233,
+    "excludeFromStandalone": true,
+    "family": "طقم العراقة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1179255884,
+      1097711035,
+      1172845662
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1708412751": {
+    "id": 1708412751,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1737714039": {
+    "id": 1737714039,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1738575942": {
+    "id": 1738575942,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1740341873": {
+    "id": 1740341873,
+    "family": "الأصالة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1946293942,
+      431600612,
+      741262391
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1760139841": {
+    "id": 1760139841,
+    "family": "الساعات",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1760340536": {
+    "id": 1760340536,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1761004349": {
+    "id": 1761004349,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1775084579": {
+    "id": 1775084579,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "زيتي",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1791107324": {
+    "id": 1791107324,
+    "family": "التميز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1791454528": {
+    "id": 1791454528,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1808952165": {
+    "id": 1808952165,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1836209164": {
+    "id": 1836209164,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1871908626": {
+    "id": 1871908626,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1879206948": {
+    "id": 1879206948,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي بحري",
+    "colorCompat": "أبيض",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1912347387": {
+    "id": 1912347387,
+    "family": "نظارات أطفال",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1946293942": {
+    "id": 1946293942,
+    "excludeFromStandalone": true,
+    "family": "طقم الأصالة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1740341873,
+      1423088233,
+      1579119821
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1967237797": {
+    "id": 1967237797,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": null,
+    "colorCompat": "الاثنين",
+    "ageGroup": "مواليد",
+    "isMawalid": true,
+    "excludeFromStandalone": false
+  },
+  "1972114864": {
+    "id": 1972114864,
+    "family": "صندل جلد H",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1980539415": {
+    "id": 1980539415,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1988728910": {
+    "id": 1988728910,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1995329713": {
+    "id": 1995329713,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "2001973449": {
+    "id": 2001973449,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "2004662672": {
+    "id": 2004662672,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "2028154067": {
+    "id": 2028154067,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "2028270246": {
+    "id": 2028270246,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "2084667959": {
+    "id": 2084667959,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "2090845131": {
+    "id": 2090845131,
+    "family": "الشموخ",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": null,
+    "colorCompat": "varies",
+    "ageGroup": "مواليد",
+    "isMawalid": true,
+    "excludeFromStandalone": false
+  },
+  "2095209306": {
+    "id": 2095209306,
+    "family": "نظارات أطفال",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "2101791437": {
+    "id": 2101791437,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "2110595941": {
+    "id": 2110595941,
+    "family": "الساعات",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "2112026118": {
+    "id": 2112026118,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "2127481995": {
+    "id": 2127481995,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كموني",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "2128937638": {
+    "id": 2128937638,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "2133781076": {
+    "id": 2133781076,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "2142939960": {
+    "id": 2142939960,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "2143862071": {
+    "id": 2143862071,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أوف وايت",
+    "colorCompat": "أوف وايت",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  }
+};
+window.BURJAH_RANKINGS = {
+  "thob": {
+    "زواج": [
+      "الهيبة",
+      "العراقة",
+      "بيزنس كيدز",
+      "الأصالة",
+      "الأندلسي",
+      "التميز",
+      "العز"
+    ],
+    "تصوير": [
+      "الهيبة",
+      "العراقة",
+      "بيزنس كيدز",
+      "الأصالة",
+      "الأندلسي",
+      "التميز",
+      "العز"
+    ],
+    "عيد": [
+      "الهيبة",
+      "العراقة",
+      "بيزنس كيدز",
+      "الأصالة",
+      "الأندلسي",
+      "التميز",
+      "العز"
+    ],
+    "هدية": [
+      "الهيبة",
+      "العراقة",
+      "بيزنس كيدز",
+      "الأصالة",
+      "الأندلسي",
+      "التميز",
+      "العز"
+    ],
+    "زيارة": [
+      "التميز",
+      "بيزنس كيدز",
+      "العز",
+      "الهيبة",
+      "العراقة",
+      "الأصالة",
+      "كلاسيك",
+      "كلاسيك 2",
+      "الأندلسي"
+    ],
+    "مدرسة": [
+      "كلاسيك 2",
+      "كلاسيك",
+      "العز"
+    ],
+    "يومي": [
+      "كلاسيك 2",
+      "كلاسيك",
+      "العز"
+    ],
+    "بدون": [
+      "العز"
+    ]
+  },
+  "sideriMostaqel": {
+    "زواج": [
+      "سديري بُرجة",
+      "الوقار",
+      "الرفعة",
+      "الفخر",
+      "المخملي",
+      "الحضارة",
+      "طويق",
+      "العراقة المستقل",
+      "الروشان",
+      "ثقافتنا",
+      "الجص الحساوي",
+      "الشال"
+    ],
+    "تصوير": [
+      "سديري بُرجة",
+      "الوقار",
+      "الرفعة",
+      "الفخر",
+      "المخملي",
+      "الحضارة",
+      "طويق",
+      "العراقة المستقل",
+      "الروشان",
+      "ثقافتنا",
+      "الجص الحساوي",
+      "الشال"
+    ],
+    "عيد": [
+      "سديري بُرجة",
+      "الوقار",
+      "الرفعة",
+      "الفخر",
+      "المخملي",
+      "الحضارة",
+      "طويق",
+      "العراقة المستقل",
+      "الروشان",
+      "ثقافتنا",
+      "الجص الحساوي",
+      "الشال"
+    ],
+    "هدية": [
+      "سديري بُرجة",
+      "الوقار",
+      "الرفعة",
+      "الفخر",
+      "المخملي",
+      "الحضارة",
+      "طويق",
+      "العراقة المستقل",
+      "الروشان",
+      "ثقافتنا",
+      "الجص الحساوي",
+      "الشال"
+    ],
+    "زيارة": [
+      "الوقار",
+      "الرفعة",
+      "الفخر",
+      "المخملي",
+      "الحضارة",
+      "طويق",
+      "العراقة المستقل",
+      "الروشان",
+      "ثقافتنا",
+      "الجص الحساوي",
+      "الشال"
+    ]
+  },
+  "daglah": {
+    "زواج": [
+      "الرفعة",
+      "الأصالة",
+      "الشموخ",
+      "الروشان"
+    ],
+    "تصوير": [
+      "الرفعة",
+      "الأصالة",
+      "الشموخ",
+      "الروشان"
+    ],
+    "عيد": [
+      "الرفعة",
+      "الأصالة",
+      "الشموخ",
+      "الروشان"
+    ],
+    "هدية": [
+      "الرفعة",
+      "الأصالة",
+      "الشموخ",
+      "الروشان"
+    ]
+  },
+  "taqm": {
+    "زواج": [
+      "طقم الهيبة",
+      "طقم العراقة",
+      "طقم الأصالة",
+      "طقم الفخامة الشتوي"
+    ],
+    "تصوير": [
+      "طقم الهيبة",
+      "طقم العراقة",
+      "طقم الأصالة",
+      "طقم الفخامة الشتوي"
+    ],
+    "عيد": [
+      "طقم الهيبة",
+      "طقم العراقة",
+      "طقم الأصالة",
+      "طقم الفخامة الشتوي"
+    ],
+    "هدية": [
+      "طقم الهيبة",
+      "طقم العراقة",
+      "طقم الأصالة",
+      "طقم الفخامة الشتوي"
+    ]
+  },
+  "berbetoz": {
+    "زواج": [
+      "بربتوز الهيبة",
+      "بربتوز أندلسي",
+      "بربتوز بيزنس كيدز",
+      "بربتوز العز",
+      "بربتوز"
+    ],
+    "تصوير": [
+      "بربتوز الهيبة",
+      "بربتوز أندلسي",
+      "بربتوز بيزنس كيدز",
+      "بربتوز العز",
+      "بربتوز"
+    ],
+    "عيد": [
+      "بربتوز الهيبة",
+      "بربتوز أندلسي",
+      "بربتوز بيزنس كيدز",
+      "بربتوز العز",
+      "بربتوز"
+    ],
+    "هدية": [
+      "بربتوز الهيبة",
+      "بربتوز أندلسي",
+      "بربتوز بيزنس كيدز",
+      "بربتوز العز",
+      "بربتوز"
+    ]
+  },
+  "mawalidTrackOrder": {
+    "زواج": [
+      "بربتوز",
+      "سديري مستقل",
+      "دقلة",
+      "ثوب عادي"
+    ],
+    "تصوير": [
+      "بربتوز",
+      "سديري مستقل",
+      "دقلة",
+      "ثوب عادي"
+    ],
+    "عيد": [
+      "بربتوز",
+      "سديري مستقل",
+      "دقلة",
+      "ثوب عادي"
+    ],
+    "هدية": [
+      "بربتوز",
+      "سديري مستقل",
+      "دقلة",
+      "ثوب عادي"
+    ]
+  },
+  "chooseForMeTrackOrder": {
+    "زواج": [
+      "طقم",
+      "ثوب",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "تصوير": [
+      "طقم",
+      "ثوب",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "عيد": [
+      "طقم",
+      "ثوب",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "هدية": [
+      "طقم",
+      "ثوب",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "زيارة": [
+      "سديري مستقل",
+      "ثوب"
+    ],
+    "مدرسة": [
+      "ثوب"
+    ],
+    "يومي": [
+      "ثوب"
+    ],
+    "بدون": [
+      "ثوب"
+    ]
+  },
+  "accessoriesMawalidOrder": [
+    "ميني سكارف",
+    "شرقي",
+    "صندل جلد H",
+    "صندل جلد"
+  ],
+  "accessories1to12Priority": {
+    "5-12": [
+      "الساعات",
+      "السبح الفاخرة",
+      "نظارات أطفال"
+    ],
+    "1-4": [
+      "السبح الفاخرة"
+    ]
+  }
+};
+</script>
+<script>
+'use strict';
+/**
+ * محرك القرار — شجرة ثابتة بالكامل (لا ذكاء اصطناعي)، ينفّذ تسلسل logic_prompt.md §21:
+ * collectAnswers -> filterHardConstraints -> selectFamilies -> checkLiveAvailability
+ * -> applyBudget -> rankResults -> buildCards.
+ * يعمل داخل Node (اختبارات) وداخل المتصفح (مضمّن inline في الويدجت) بلا فروقات.
+ */
+(function (root, factory) {
+  const mod = factory();
+  if (typeof module !== 'undefined' && module.exports) module.exports = mod;
+  else root.DecisionEngine = mod;
+})(typeof self !== 'undefined' ? self : this, function () {
+  // ============================================================
+  // ثوابت مشتقة من logic_prompt.md §4-§7
+  // ============================================================
+
+  // §5.1 نطاق مقاس الثوب التقريبي حسب العمر (متداخل عمداً)
+  const THOB_SIZE_RANGE_BY_AGE = {
+    '1-3': [26, 32],
+    '4-6': [33, 40],
+    '7-9': [38, 46],
+    '10-12': [46, 52],
+  };
+
+  // §5.2 ربط مقاس السديري بنطاق مقاس الثوب المقابل
+  const VEST_TO_THOB_RANGE = [
+    { vestSize: 10, thobRange: [22, 24] },
+    { vestSize: 12, thobRange: [25, 28] },
+    { vestSize: 14, thobRange: [29, 32] },
+    { vestSize: 16, thobRange: [33, 36] },
+    { vestSize: 18, thobRange: [37, 41] },
+    { vestSize: 20, thobRange: [42, 45] },
+    { vestSize: 22, thobRange: [46, 52] },
+  ];
+
+  // خيارات مبسّطة لسؤال المناسبة في الويدجت (build_spec.md §5.4) -> مجموعة مناسبات كنسية (logic_prompt.md §4)
+  const OCCASION_UI_MAP = {
+    'زواج': ['زواج'],
+    'تصوير': ['تصوير'],
+    'عيد': ['عيد'],
+    'عيد_زيارة': ['عيد', 'زيارة'],
+    'زيارة': ['زيارة'],
+    'مدرسة_يومي': ['مدرسة', 'يومي'],
+    'مدرسة': ['مدرسة'],
+    'يومي': ['يومي'],
+    'بدون': ['بدون'],
+    'هدية': ['هدية'],
+  };
+
+  // خيارات مبسّطة لسؤال الستايل/المسار (build_spec.md §5.4) -> مسار + تفضيل أسلوب/فخامة (قابل للتجاوز فقط)
+  const TRACK_UI_MAP = {
+    'ثوب_سادة': { track: 'ثوب', styleHint: 'هادئ وبسيط' },
+    'ثوب_مطرز': { track: 'ثوب', styleHint: 'تطريز واضح مميز' },
+    'طقم': { track: 'طقم' },
+    'إطلالة_فخمة': { track: 'ثوب', luxuryHint: 'فاخر ومميز' },
+    'اختر_لي': { track: 'اختر لي' },
+    // مسارات إضافية يدعمها المحرك (غير مربوطة بزر مباشر في الويدجت الحالي، تُستخدم من "اختر لي" أو اختبارات)
+    'سديري_مستقل': { track: 'سديري مستقل' },
+    'دقلة': { track: 'دقلة' },
+  };
+
+  const COLORTYPE_WHITE_FAMILY = new Set(['أبيض', 'أوف وايت']);
+
+  function normalizeOccasionSet(occasionChoice) {
+    return new Set(OCCASION_UI_MAP[occasionChoice] || [occasionChoice]);
+  }
+
+  function resolveTrack(answers) {
+    if (answers._resolvedTrack) return answers._resolvedTrack; // تجاوز داخلي لتشغيل مسار محدد أثناء "اختر لي"
+    if (answers.age === 'مواليد') return 'إطلالة مواليد'; // §13.1 العمر يفرض المسار بلا نقاش
+    const mapped = TRACK_UI_MAP[answers.styleChoice];
+    return mapped ? mapped.track : answers.styleChoice;
+  }
+
+  // ============================================================
+  // 1) collectAnswers — تحقق الحد الأدنى (العمر/المناسبة/المسار/الميزانية إلزامية قبل التوصية، §2/§6)
+  // ============================================================
+  function collectAnswers(rawAnswers) {
+    const missing = [];
+    if (!rawAnswers.age) missing.push('age');
+    if (!rawAnswers.occasionChoice) missing.push('occasionChoice');
+    if (!rawAnswers.styleChoice) missing.push('styleChoice');
+    if (rawAnswers.budget === undefined || rawAnswers.budget === null) missing.push('budget');
+    return { complete: missing.length === 0, missing, answers: rawAnswers };
+  }
+
+  // ============================================================
+  // 2) filterHardConstraints — القسم 7.1: عمر/مناسبة/مسار/لون/نوع لون/موسم/مقاس/بيع/ظهور/مخزون
+  //    (البيع/الظهور/المخزون تُفحص لاحقاً في checkLiveAvailability بعد جلب live.json)
+  // ============================================================
+  function filterHardConstraints(catalogEntries, answers) {
+    const track = resolveTrack(answers);
+    const occasionSet = normalizeOccasionSet(answers.occasionChoice);
+    const requestedColors = (answers.colors || []).filter((c) => c && c !== 'بدون تفضيل');
+
+    return catalogEntries.filter((p) => {
+      if (p.excludeFromStandalone && track !== 'طقم') return false;
+
+      // القسم 19: لا سديري بُرجة للزيارات — مطبّق أصلاً عبر occasions الثابتة في products.json.
+      // القسم 10.1: السديري المستقل يفترض أن العميل يملك ثوباً مناسباً مسبقاً — لا نفترض ذلك أبداً؛
+      // يُفعَّل فقط إن أكّد المستخدم صراحة (answers.hasThobForVest === true).
+      if (track === 'سديري مستقل' && !answers.hasThobForVest) return false;
+
+      // للطقم: البطاقة تمثّل الإطلالة الكاملة، فلا نعرض سديري المكوّن كنتيجة مستقلة —
+      // فقط الثوب (يُجمع مع أرخص سديري متوافق في applyBudget) أو الطقم أحادي القطعة.
+      const trackMatches =
+        (track === 'ثوب' && p.track && p.track.includes('ثوب')) ||
+        (track === 'طقم' && p.taqmFamily && (p.taqmRole === 'ثوب' || p.taqmRole === 'طقم كامل')) ||
+        (track === 'سديري مستقل' && p.track && p.track.includes('سديري مستقل')) ||
+        (track === 'دقلة' && p.track && p.track.includes('دقلة')) ||
+        (track === 'إطلالة مواليد' && p.track && p.track.includes('إطلالة مواليد'));
+      if (!trackMatches) return false;
+
+      // المناسبة (صلبة) — للطقم نستخدم occasions_taqm الخاصة بسياق الطقم
+      const productOccasions =
+        track === 'طقم' ? p.occasions_taqm || p.occasions : p.occasions;
+      if (productOccasions) {
+        const overlap = productOccasions.some((o) => occasionSet.has(o));
+        if (!overlap) return false;
+      }
+
+      // نوع اللون (صلب) — مقارنة تقريبية بالخريطة الثابتة؛ التأكيد الدقيق لاحقاً من live.json
+      if (requestedColors.length) {
+        const colorTypeForCheck =
+          track === 'طقم' && p.taqmColorType ? p.taqmColorType : p.colorType;
+        if (colorTypeForCheck && colorTypeForCheck.length) {
+            const wantsWhiteFamily = requestedColors.some((c) => COLORTYPE_WHITE_FAMILY.has(c));
+            const wantsColored = requestedColors.some((c) => !COLORTYPE_WHITE_FAMILY.has(c));
+            const hasWhiteFamily = colorTypeForCheck.some((c) => COLORTYPE_WHITE_FAMILY.has(c));
+            const hasColored = colorTypeForCheck.includes('ملوّن');
+            const passes = (wantsWhiteFamily && hasWhiteFamily) || (wantsColored && hasColored);
+            if (!passes) return false;
+        } else if (p.colorCompat && p.colorCompat !== 'varies') {
+          // سديري/دقلة: colorCompat = أبيض|أوف وايت|الاثنين
+          const wantsWhiteFamily = requestedColors.some((c) => COLORTYPE_WHITE_FAMILY.has(c));
+          if (wantsWhiteFamily && p.colorCompat !== 'الاثنين' && !requestedColors.includes(p.colorCompat)) {
+            return false;
+          }
+        }
+      }
+
+      // العمر (صلب لغير الثوب/الطقم — عبر ageGroup الصريح إن وُجد؛ مقاس الثوب يُفحص عبر availableSizes لاحقاً)
+      if (p.ageGroup) {
+        if (p.ageGroup === 'مواليد' && answers.age !== 'مواليد') return false;
+        if (p.ageGroup !== 'مواليد' && answers.age === 'مواليد') return false;
+        if (p.ageGroup.includes('-') && answers.ageYears !== undefined) {
+          const [min, max] = p.ageGroup.split('-').map(Number);
+          if (answers.ageYears < min || answers.ageYears > max) return false;
+        }
+      } else if (answers.age === 'مواليد' && track !== 'إطلالة مواليد') {
+        return false; // مواليد لا يدخل مساراً غير مسار المواليد إلا عبر ageGroup الصريح
+      }
+
+      return true;
+    });
+  }
+
+  // ============================================================
+  // 3) selectFamilies — ترتيب العائلات حسب جداول rankings.json بحسب المناسبة+المسار
+  // ============================================================
+  function familyRankKey(product, track) {
+    if (track === 'طقم') return product.taqmFamily;
+    return product.family;
+  }
+
+  function selectFamilies(candidates, answers, rankings) {
+    const track = resolveTrack(answers);
+    const occasionSet = normalizeOccasionSet(answers.occasionChoice);
+    const primaryOccasion = Array.from(occasionSet)[0];
+
+    let orderTable = null;
+    if (track === 'ثوب') orderTable = rankings.thob;
+    else if (track === 'طقم') orderTable = rankings.taqm;
+    else if (track === 'سديري مستقل') orderTable = rankings.sideriMostaqel;
+    else if (track === 'دقلة') orderTable = rankings.daglah;
+    else if (track === 'إطلالة مواليد') orderTable = rankings.berbetoz;
+
+    const order = orderTable ? orderTable[primaryOccasion] || [] : [];
+    return candidates.map((p) => ({
+      ...p,
+      _familyRank: order.indexOf(familyRankKey(p, track)),
+    }));
+  }
+
+  // ============================================================
+  // 4) checkLiveAvailability — القسم 3 و21.5-6: توفر فعلي + مقاس ضمن النطاق + لون مطلوب
+  // ============================================================
+  function checkLiveAvailability(candidates, live, answers) {
+    const requestedColors = (answers.colors || []).filter((c) => c && c !== 'بدون تفضيل');
+    const sizeRange = THOB_SIZE_RANGE_BY_AGE[answers.age] || null;
+    // تعذّر تحميل live.json بالكامل (فشل الشبكة) — حالة مختلفة عن غياب سجل منتج واحد
+    // (الأخير لا يُفترض حدوثه في الإنتاج لأن sync.js يكتب سجلاً لكل ID، حتى عند الفشل).
+    const liveUnavailableEntirely = !live || !live.products;
+
+    return candidates
+      .map((p) => {
+        const liveRecord = live && live.products ? live.products[p.id] : undefined;
+        if (!liveRecord) {
+          if (liveUnavailableEntirely) {
+            return { ...p, _live: null, _liveVerified: false, _matchedColors: [], _matchedSizes: [] };
+          }
+          return null; // منتج غير موجود في live.json رغم نجاح تحميله — لا نجزم بتوفره
+        }
+        if (!liveRecord.eligible) return null; // مخفي/نافد/غير مباع — لا يُعرض إطلاقاً
+
+        const availableSizes = liveRecord.availableSizes || {};
+        let matchedColors = Object.keys(availableSizes);
+        if (requestedColors.length) {
+          matchedColors = matchedColors.filter((c) => requestedColors.includes(c));
+        }
+
+        // لكل لون مطابق، صفِّ المقاسات ضمن النطاق التقريبي (إن وُجد نطاق؛ الفئات ذات ageGroup الصريح تتجاوز هذا الفحص)
+        const matchedSizesByColor = {};
+        let anySizeAvailable = false;
+        for (const color of matchedColors) {
+          let sizes = availableSizes[color] || [];
+          if (sizeRange && !p.ageGroup) {
+            sizes = sizes.filter((s) => s >= sizeRange[0] && s <= sizeRange[1]);
+          }
+          if (sizes.length) {
+            matchedSizesByColor[color] = sizes;
+            anySizeAvailable = true;
+          }
+        }
+
+        if (!matchedColors.length || !anySizeAvailable) return null;
+
+        return {
+          ...p,
+          _live: liveRecord,
+          _liveVerified: true,
+          _matchedColors: Object.keys(matchedSizesByColor),
+          _matchedSizes: matchedSizesByColor,
+        };
+      })
+      .filter(Boolean);
+  }
+
+  // ============================================================
+  // 5) applyBudget — القسم 6: السعر المخفض الفعلي؛ الطقم = إجمالي المكوّنين
+  // ============================================================
+  function effectivePrice(liveRecord) {
+    if (!liveRecord) return null;
+    return liveRecord.hasDiscount ? liveRecord.salePrice : liveRecord.basePrice;
+  }
+
+  function applyBudget(candidates, answers, live) {
+    if (answers.budget === undefined || answers.budget === null) return candidates;
+    const track = resolveTrack(answers);
+    return candidates
+      .map((p) => {
+        let price = effectivePrice(p._live);
+        // مبلغ الطقم = إجمالي الثوب + السديري (§12.6) — فقط حين المسار الفعلي هو "طقم".
+        // بعض أثواب الطقم (كالهيبة) لها أيضاً taqmRole لأنها تُستخدم كثوب مستقل أيضاً؛
+        // لا نجمع سعر السديري إلا حين المستخدم فعلاً في مسار الطقم.
+        if (track === 'طقم' && p.taqmRole === 'ثوب' && p.taqmPairIds && p.taqmPairIds.length) {
+          // القسم 12.6: الميزانية = إجمالي المخفض للمكوّنين. نأخذ أرخص سديري متوفر متوافق كتقدير.
+          const pairPrices = p.taqmPairIds
+            .map((vid) => live && live.products && live.products[vid])
+            .filter((v) => v && v.eligible)
+            .map((v) => effectivePrice(v))
+            .filter((n) => n !== null);
+          if (pairPrices.length) {
+            price = (price || 0) + Math.min(...pairPrices);
+          }
+        }
+        const overBudget = price !== null && price > answers.budget;
+        return { ...p, _price: price, _overBudget: overBudget, _overBudgetBy: overBudget ? price - answers.budget : 0 };
+      })
+      .filter((p) => p._price !== null);
+  }
+
+  // ============================================================
+  // 6) rankResults — القسم 7.3: أقل تجاوزات للقابل للتجاوز (أسلوب/فخامة)، ثم ترتيب العائلة، ثم الأرخص
+  // ============================================================
+  function styleLuxuryMismatchScore(p, answers) {
+    let mismatches = 0;
+    const mapped = TRACK_UI_MAP[answers.styleChoice];
+    if (mapped && mapped.styleHint && p.style && !p.style.includes(mapped.styleHint)) mismatches += 1;
+    if (mapped && mapped.luxuryHint && p.luxury !== mapped.luxuryHint) mismatches += 1;
+    return mismatches;
+  }
+
+  function rankResults(candidates, answers) {
+    const withinBudget = candidates.filter((p) => !p._overBudget);
+    const pool = withinBudget.length ? withinBudget : candidates; // §18 أقرب بديل عند عدم وجود مطابق كامل
+
+    return pool
+      .map((p) => ({ ...p, _mismatch: styleLuxuryMismatchScore(p, answers) }))
+      .sort((a, b) => {
+        if (a._overBudget !== b._overBudget) return a._overBudget ? 1 : -1;
+        if (a._mismatch !== b._mismatch) return a._mismatch - b._mismatch;
+        const rankA = a._familyRank === -1 ? Infinity : a._familyRank;
+        const rankB = b._familyRank === -1 ? Infinity : b._familyRank;
+        if (rankA !== rankB) return rankA - rankB;
+        return (a._price || 0) - (b._price || 0);
+      });
+  }
+
+  // ============================================================
+  // 7) buildCards — القسم 8/20/22: أفضل / أبسط / أفخم
+  // ============================================================
+  function pickSkinToneColor(matchedColors, skinTone, skinToneColorWeights) {
+    if (!skinTone || !skinToneColorWeights || !skinToneColorWeights[skinTone]) return matchedColors[0];
+    const preferred = skinToneColorWeights[skinTone];
+    // رتّب حسب أولوية التفضيل نفسها لا حسب ترتيب matchedColors العشوائي
+    const found = preferred.find((c) => matchedColors.includes(c));
+    return found || matchedColors[0];
+  }
+
+  function toCard(p, answers, skinToneColorWeights) {
+    const color = pickSkinToneColor(p._matchedColors, answers.skinTone, skinToneColorWeights);
+    const sizes = p._matchedSizes[color] || [];
+    return {
+      id: p.id,
+      family: p.family,
+      name: (p._live && p._live.name) || p.family,
+      image: p._live ? p._live.image : null,
+      url: p._live ? p._live.url : null,
+      price: p._price,
+      basePrice: p._live ? p._live.basePrice : null,
+      salePrice: p._live ? p._live.salePrice : null,
+      hasDiscount: p._live ? p._live.hasDiscount : false,
+      color,
+      availableSizes: sizes,
+      overBudget: p._overBudget,
+      overBudgetBy: p._overBudgetBy,
+      mismatch: p._mismatch,
+      mismatchReason: p._mismatch > 0 ? 'الأسلوب أو مستوى الفخامة المطلوب غير متوفر تماماً — أقرب بديل' : null,
+    };
+  }
+
+  function buildCards(ranked, answers, options = {}) {
+    if (!ranked.length) {
+      return { empty: true, message: 'ما وجدنا خياراً يطابق كل الشروط. جرّبي تعديل شرط واحد (الأسلوب أو الفخامة) مع إبقاء العمر/المناسبة/اللون كما هي.' };
+    }
+    const skinToneColorWeights = options.skinToneColorWeights;
+
+    if (answers.styleChoice === 'اختر_لي') {
+      const best = ranked[0];
+      const simpler = ranked.find((p) => p.id !== best.id && (p._price || 0) <= (best._price || 0)) || ranked[1];
+      const fancier = ranked.find((p) => p.id !== best.id && p.id !== (simpler && simpler.id) && (p._price || 0) >= (best._price || 0)) ||
+        ranked.find((p) => p.id !== best.id && p.id !== (simpler && simpler.id));
+
+      const cards = [
+        { role: 'best', label: 'الاختيار الأفضل', card: toCard(best, answers, skinToneColorWeights) },
+      ];
+      if (simpler) cards.unshift({ role: 'simpler', label: 'بديل أكثر بساطة', card: toCard(simpler, answers, skinToneColorWeights) });
+      if (fancier) cards.push({ role: 'fancier', label: 'بديل أكثر فخامة', card: toCard(fancier, answers, skinToneColorWeights) });
+
+      return { empty: false, mode: 'choose-for-me', cards };
+    }
+
+    return {
+      empty: false,
+      mode: 'direct',
+      cards: ranked.map((p) => ({ role: 'result', label: null, card: toCard(p, answers, skinToneColorWeights) })),
+    };
+  }
+
+  // ينفّذ السلسلة الكاملة (2-6) لمسار محدد بالضبط، ويرجّع القائمة المرتّبة الخام (بلا buildCards).
+  function runPipelineForTrack(entries, answers, forcedTrack, rankings, live) {
+    const trackedAnswers = forcedTrack ? { ...answers, _resolvedTrack: forcedTrack } : answers;
+    let candidates = filterHardConstraints(entries, trackedAnswers);
+    candidates = selectFamilies(candidates, trackedAnswers, rankings);
+    candidates = checkLiveAvailability(candidates, live, trackedAnswers);
+    candidates = applyBudget(candidates, trackedAnswers, live);
+    return rankResults(candidates, trackedAnswers);
+  }
+
+  // ============================================================
+  // التنسيق العام
+  // ============================================================
+  function recommend(rawAnswers, { catalog, rankings, live, skinToneColorWeights } = {}) {
+    const collected = collectAnswers(rawAnswers);
+    if (!collected.complete) {
+      return { empty: true, incomplete: true, missing: collected.missing };
+    }
+    const answers = collected.answers;
+    const entries = Object.entries(catalog).map(([id, meta]) => ({ id, ...meta }));
+
+    const baseTrack = resolveTrack(answers);
+
+    if (baseTrack !== 'اختر لي') {
+      const ranked = runPipelineForTrack(entries, answers, null, rankings, live);
+      return buildCards(ranked, answers, { skinToneColorWeights });
+    }
+
+    // مسار "اختر لي" (logic_prompt.md §14): جرّب أنواع الإطلالة بترتيب المناسبة، وتوقف
+    // عند أول نوع يوفّر 3 مؤهلة؛ إن لم يبلغ أي نوع 3، استخدم أغنى نتيجة كأقرب بديل (§18).
+    const occasionSet = normalizeOccasionSet(answers.occasionChoice);
+    const primaryOccasion = Array.from(occasionSet)[0];
+    const trackOrder = (rankings.chooseForMeTrackOrder && rankings.chooseForMeTrackOrder[primaryOccasion]) || ['ثوب'];
+
+    let bestRanked = [];
+    for (const candidateTrack of trackOrder) {
+      const ranked = runPipelineForTrack(entries, answers, candidateTrack, rankings, live);
+      if (ranked.length >= 3) { bestRanked = ranked; break; }
+      if (ranked.length > bestRanked.length) bestRanked = ranked;
+    }
+    return buildCards(bestRanked, answers, { skinToneColorWeights });
+  }
+
+  return {
+    recommend,
+    collectAnswers,
+    filterHardConstraints,
+    selectFamilies,
+    checkLiveAvailability,
+    applyBudget,
+    rankResults,
+    buildCards,
+    resolveTrack,
+    normalizeOccasionSet,
+    THOB_SIZE_RANGE_BY_AGE,
+    VEST_TO_THOB_RANGE,
+    OCCASION_UI_MAP,
+    TRACK_UI_MAP,
+  };
+});
+
+</script>
+<script>
+(function () {
+  'use strict';
+
+  // ============================================================
+  // إعداد — استبدل هذا الرابط برابط خدمة Render الفعلي بعد النشر (build_spec.md §2/§5.1)
+  // ============================================================
+  const LIVE_JSON_URL = 'https://YOUR-RENDER-SERVICE.onrender.com/live.json';
+
+  // ============================================================
+  // أيقونات خطّية بسيطة (SVG مضمّن — لا مكتبات خارجية، logic_prompt.md §22.15)
+  // ============================================================
+  function icon(pathD, viewBox) {
+    return '<svg width="22" height="22" viewBox="' + (viewBox || '0 0 24 24') +
+      '" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+      pathD + '</svg>';
+  }
+  const ICONS = {
+    baby: icon('<circle cx="12" cy="8" r="4"/><path d="M6 20c0-3 2.5-5 6-5s6 2 6 5"/>'),
+    toddler: icon('<circle cx="12" cy="6" r="3"/><path d="M7 21v-4a5 5 0 0 1 10 0v4"/>'),
+    kid: icon('<circle cx="12" cy="5" r="3"/><path d="M6 21l1-9h10l1 9"/>'),
+    kid2: icon('<circle cx="12" cy="5" r="3"/><path d="M5 21l2-10h10l2 10"/>'),
+    preteen: icon('<circle cx="12" cy="4.5" r="2.8"/><path d="M5 21l1.5-11h11L19 21"/>'),
+    wedding: icon('<circle cx="8.5" cy="14.5" r="4.5"/><circle cx="15.5" cy="14.5" r="4.5"/><path d="M12 4v4"/>'),
+    eid: icon('<path d="M17 12a5 5 0 1 1-6-4.9A6.5 6.5 0 1 0 17 12z"/>'),
+    school: icon('<path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/>'),
+    camera: icon('<rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M9 7l1.5-2h3L15 7"/>'),
+    none: icon('<circle cx="12" cy="12" r="9"/><path d="M8 8l8 8"/>'),
+    plain: icon('<path d="M9 3h6l1 4-1 14H9L8 7z"/>'),
+    embroidered: icon('<path d="M9 3h6l1 4-1 14H9L8 7z"/><path d="M9.5 8h5M9.5 11h5M9.5 14h5"/>'),
+    set: icon('<path d="M8 4h3l1 3-1 13H8L7 7z"/><path d="M14 5h4l1 3-1 9h-4z"/>'),
+    luxury: icon('<path d="M12 2l1.8 4.6L18 8l-4.2 1.4L12 14l-1.8-4.6L6 8l4.2-1.4z"/><path d="M5 18l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/>'),
+    shuffle: icon('<path d="M3 6h4l7 12h4"/><path d="M3 16h4l2.5-4.3"/><path d="M17 6h4M17 16h4"/><path d="M18.5 4.5L21 6l-2.5 1.5M18.5 17.5L21 16l-2.5-1.5"/>'),
+  };
+
+  // ============================================================
+  // بيانات الأسئلة
+  // ============================================================
+  const AGE_OPTIONS = [
+    { value: 'مواليد', label: 'مواليد حتى سنة', icon: ICONS.baby },
+    { value: '1-3', label: '1 - 3 سنوات', icon: ICONS.toddler },
+    { value: '4-6', label: '4 - 6 سنوات', icon: ICONS.kid },
+    { value: '7-9', label: '7 - 9 سنوات', icon: ICONS.kid2 },
+    { value: '10-12', label: '10 - 12 سنة', icon: ICONS.preteen },
+  ];
+  const OCCASION_OPTIONS = [
+    { value: 'زواج', label: 'زواج أو مناسبة فخمة', icon: ICONS.wedding },
+    { value: 'عيد_زيارة', label: 'عيد أو زيارة', icon: ICONS.eid },
+    { value: 'مدرسة_يومي', label: 'مدرسة أو يومي', icon: ICONS.school },
+    { value: 'تصوير', label: 'تصوير', icon: ICONS.camera },
+    { value: 'بدون', label: 'بدون مناسبة', icon: ICONS.none },
+  ];
+  const STYLE_OPTIONS = [
+    { value: 'ثوب_سادة', label: 'ثوب سادة', icon: ICONS.plain },
+    { value: 'ثوب_مطرز', label: 'ثوب مطرز', icon: ICONS.embroidered },
+    { value: 'طقم', label: 'طقم ثوب مع سديري', icon: ICONS.set },
+    { value: 'إطلالة_فخمة', label: 'إطلالة فخمة', icon: ICONS.luxury },
+    { value: 'اختر_لي', label: 'اختاروا لي', icon: ICONS.shuffle },
+  ];
+  const SKIN_OPTIONS = [
+    { value: 'فاتحة جداً', label: 'فاتحة جداً', swatch: '#f6dfc9' },
+    { value: 'فاتحة', label: 'فاتحة', swatch: '#e8c19e' },
+    { value: 'متوسطة', label: 'متوسطة', swatch: '#c98d5f' },
+    { value: 'داكنة', label: 'داكنة', swatch: '#8a5a35' },
+  ];
+  // ترجيح ترتيب الألوان فقط داخل النتائج المؤهلة أصلاً — لا يُستبعد بها أي منتج إطلاقاً
+  // (logic_prompt.md §7.1 و§19: "لا تستخدم لون البشرة كعامل استبعاد").
+  const SKIN_COLOR_WEIGHTS = {
+    'فاتحة جداً': ['رصاصي', 'سماوي', 'عنابي', 'أبيض', 'أوف وايت'],
+    'فاتحة': ['أوف وايت', 'بيج', 'أخضر', 'أبيض'],
+    'متوسطة': ['أبيض', 'أوف وايت', 'سماوي', 'بيج'],
+    'داكنة': ['أبيض', 'أوف وايت', 'عنابي', 'أخضر'],
+  };
+  const COLOR_OPTIONS = [
+    { value: 'أبيض', label: 'أبيض', swatch: '#ffffff' },
+    { value: 'أوف وايت', label: 'أوف وايت', swatch: '#f1e7d6' },
+    { value: 'سماوي', label: 'سماوي', swatch: '#8ec9e0' },
+    { value: 'رصاصي', label: 'رصاصي', swatch: '#9aa0a6' },
+    { value: 'بيج', label: 'بيج', swatch: '#e3c9a2' },
+    { value: 'أخضر', label: 'أخضر', swatch: '#6f9c76' },
+    { value: 'عنابي', label: 'عنابي', swatch: '#7a2733' },
+  ];
+
+  const STEPS = ['age', 'occasion', 'style', 'skin', 'colors', 'budget'];
+  const STEP_TITLES = {
+    age: 'كم عمر طفلك؟',
+    occasion: 'الإطلالة لأي مناسبة؟',
+    style: 'أي ستايل تفضّلين؟',
+    skin: 'وش أقرب درجة لبشرة طفلك؟',
+    colors: 'أي الألوان تفضّلين؟',
+    budget: 'وش الميزانية التقريبية؟ (بالريال)',
+  };
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, (c) => (
+      { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    ));
+  }
+
+  function mount(root) {
+    const state = {
+      screen: 'hero', // hero | question | results
+      stepIndex: 0,
+      answers: { colors: [] },
+      live: null,
+      liveError: false,
+      liveLoading: true,
+    };
+
+    fetch(LIVE_JSON_URL)
+      .then((r) => {
+        if (!r.ok) throw new Error('bad status ' + r.status);
+        return r.json();
+      })
+      .then((data) => {
+        state.live = data;
+        state.liveLoading = false;
+        if (state.screen === 'results') render();
+      })
+      .catch(() => {
+        state.liveError = true;
+        state.liveLoading = false;
+        if (state.screen === 'results') render();
+      });
+
+    function render() {
+      if (state.screen === 'hero') return renderHero();
+      if (state.screen === 'question') return renderQuestion();
+      if (state.screen === 'results') return renderResults();
+    }
+
+    function renderHero() {
+      root.innerHTML =
+        '<div class="bw-hero">' +
+        '<div class="bw-hero-content">' +
+        '<p class="bw-eyebrow">✨ مساعد بُرجة للاختيار</p>' +
+        '<h2 class="bw-title">محتارة وش تختارين لطفلك؟</h2>' +
+        '<p class="bw-subtitle">جاوبي على 6 أسئلة سريعة، ونرشّح لك أنسب إطلالة متوفرة الآن بسعرها الصحيح.</p>' +
+        '<button class="bw-cta" data-action="start">ابدئي الآن ←</button>' +
+        '<div class="bw-trust-row">' +
+        '<div class="bw-trust-item">اختيارات عصرية وفاخرة</div>' +
+        '<div class="bw-trust-item">منتجات بجودة عالية</div>' +
+        '<div class="bw-trust-item">تناسب كل المناسبات</div>' +
+        '</div>' +
+        '<div class="bw-how">' +
+        '<h3>كيف تعمل الأداة؟</h3>' +
+        '<div class="bw-how-step"><span class="bw-how-num">1</span> جاوبي على الأسئلة</div>' +
+        '<div class="bw-how-step"><span class="bw-how-num">2</span> نحلل اختياراتك</div>' +
+        '<div class="bw-how-step"><span class="bw-how-num">3</span> نرشّح لك الأنسب</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="bw-hero-media">' +
+        '<img src="https://cdn.salla.sa/ZqYBZ/ba28aece-5b3d-4a6d-88a8-ef127864b025-500x500-BUG3Ba1HXSlqSVhfertxBs2XT0kUivlaDJ4ZnblR.jpg" alt="طفل يرتدي ثوباً من برجة العربية" loading="lazy"/>' +
+        '</div>' +
+        '</div>';
+      root.querySelector('[data-action="start"]').addEventListener('click', () => {
+        state.screen = 'question';
+        state.stepIndex = 0;
+        render();
+      });
+    }
+
+    function currentStep() { return STEPS[state.stepIndex]; }
+
+    function isStepAnswered(step) {
+      if (step === 'age') return !!state.answers.age;
+      if (step === 'occasion') return !!state.answers.occasionChoice;
+      if (step === 'style') return !!state.answers.styleChoice;
+      if (step === 'skin') return !!state.answers.skinTone;
+      if (step === 'colors') return true; // متعدد الاختيار، اختياري (يجوز "بدون تفضيل")
+      if (step === 'budget') return state.answers.budget !== undefined && state.answers.budget !== null && state.answers.budget !== '';
+      return false;
+    }
+
+    function renderProgressDots() {
+      let html = '<div class="bw-progress">';
+      STEPS.forEach((s, i) => {
+        const cls = i === state.stepIndex ? 'is-active' : i < state.stepIndex ? 'is-done' : '';
+        html += '<span class="bw-dot ' + cls + '"></span>';
+      });
+      html += '<span class="bw-progress-label">' + (state.stepIndex + 1) + ' من ' + STEPS.length + '</span></div>';
+      return html;
+    }
+
+    function optionCardsHtml(options, selected, multi) {
+      return '<div class="bw-options">' + options.map((o) => {
+        const isSelected = multi ? selected.includes(o.value) : selected === o.value;
+        return (
+          '<button type="button" class="bw-option' + (isSelected ? ' is-selected' : '') + '" data-value="' + escapeHtml(o.value) + '">' +
+          '<span class="bw-option-icon">' + o.icon + '</span>' +
+          '<span>' + escapeHtml(o.label) + '</span>' +
+          '</button>'
+        );
+      }).join('') + '</div>';
+    }
+
+    function colorGridHtml(selected) {
+      let html = '<div class="bw-color-grid">';
+      COLOR_OPTIONS.forEach((c) => {
+        const isSelected = selected.includes(c.value);
+        html +=
+          '<button type="button" class="bw-color-chip' + (isSelected ? ' is-selected' : '') + '" data-value="' + escapeHtml(c.value) + '">' +
+          '<span class="bw-color-swatch" style="background:' + c.swatch + '"></span>' +
+          '<span>' + escapeHtml(c.label) + '</span>' +
+          '</button>';
+      });
+      const noPrefSelected = selected.includes('بدون تفضيل');
+      html +=
+        '<button type="button" class="bw-color-chip' + (noPrefSelected ? ' is-selected' : '') + '" data-value="بدون تفضيل">' +
+        '<span class="bw-color-swatch" style="background:#fff;border:1px dashed #999"></span>' +
+        '<span>ما عندي تفضيل</span>' +
+        '</button>';
+      html += '</div>';
+      return html;
+    }
+
+    function renderQuestion() {
+      const step = currentStep();
+      let bodyHtml = '';
+
+      if (step === 'age') bodyHtml = optionCardsHtml(AGE_OPTIONS, state.answers.age, false);
+      else if (step === 'occasion') bodyHtml = optionCardsHtml(OCCASION_OPTIONS, state.answers.occasionChoice, false);
+      else if (step === 'style') bodyHtml = optionCardsHtml(STYLE_OPTIONS, state.answers.styleChoice, false);
+      else if (step === 'skin') bodyHtml = optionCardsHtml(SKIN_OPTIONS.map((o) => ({ ...o, icon: '<span class="bw-color-swatch" style="background:' + o.swatch + ';display:inline-block;width:100%;height:100%;border-radius:50%"></span>' })), state.answers.skinTone, false);
+      else if (step === 'colors') bodyHtml = colorGridHtml(state.answers.colors || []);
+      else if (step === 'budget') {
+        bodyHtml =
+          '<input type="number" min="0" step="10" class="bw-budget-input" placeholder="مثال: 200" value="' +
+          (state.answers.budget || '') + '" data-role="budget-input" inputmode="numeric" />';
+      }
+
+      root.innerHTML =
+        '<div class="bw-question-screen">' +
+        renderProgressDots() +
+        '<h2 class="bw-question-title">' + STEP_TITLES[step] + '</h2>' +
+        bodyHtml +
+        '<div class="bw-nav-row">' +
+        '<button class="bw-btn-secondary" data-action="back">رجوع</button>' +
+        '<button class="bw-btn-primary" data-action="next"' + (isStepAnswered(step) ? '' : ' disabled') + '>' +
+        (state.stepIndex === STEPS.length - 1 ? 'النتائج' : 'التالي') +
+        '</button>' +
+        '</div>' +
+        '</div>';
+
+      if (step !== 'budget') {
+        root.querySelectorAll('.bw-option, .bw-color-chip').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const value = btn.getAttribute('data-value');
+            if (step === 'age') state.answers.age = value;
+            else if (step === 'occasion') state.answers.occasionChoice = value;
+            else if (step === 'style') state.answers.styleChoice = value;
+            else if (step === 'skin') state.answers.skinTone = value;
+            else if (step === 'colors') {
+              const list = state.answers.colors || [];
+              if (value === 'بدون تفضيل') {
+                state.answers.colors = list.includes('بدون تفضيل') ? [] : ['بدون تفضيل'];
+              } else {
+                let next = list.filter((v) => v !== 'بدون تفضيل');
+                next = next.includes(value) ? next.filter((v) => v !== value) : next.concat(value);
+                state.answers.colors = next;
+              }
+            }
+            render();
+          });
+        });
+      } else {
+        const input = root.querySelector('[data-role="budget-input"]');
+        input.addEventListener('input', () => {
+          const n = parseFloat(input.value);
+          state.answers.budget = input.value === '' ? null : (isNaN(n) ? null : n);
+          root.querySelector('[data-action="next"]').disabled = !isStepAnswered('budget');
+        });
+      }
+
+      root.querySelector('[data-action="back"]').addEventListener('click', () => {
+        if (state.stepIndex === 0) { state.screen = 'hero'; render(); return; }
+        state.stepIndex -= 1;
+        render();
+      });
+      root.querySelector('[data-action="next"]').addEventListener('click', () => {
+        if (!isStepAnswered(step)) return;
+        if (state.stepIndex === STEPS.length - 1) {
+          state.screen = 'results';
+          render();
+        } else {
+          state.stepIndex += 1;
+          render();
+        }
+      });
+    }
+
+    function priceBlockHtml(card) {
+      if (card.hasDiscount) {
+        return (
+          '<div class="bw-card-price-row">' +
+          '<span class="bw-price-now">' + card.price.toFixed(2) + ' ر.س</span>' +
+          '<span class="bw-price-was">' + card.basePrice.toFixed(2) + ' ر.س</span>' +
+          '</div>'
+        );
+      }
+      return '<div class="bw-card-price-row"><span class="bw-price-now">' + (card.price != null ? card.price.toFixed(2) + ' ر.س' : '—') + '</span></div>';
+    }
+
+    function cardHtml(entry) {
+      const card = entry.card;
+      const isBest = entry.role === 'best';
+      const roleLabel = entry.label || '';
+      let alertHtml = '';
+      if (card.overBudget) {
+        alertHtml += '<div class="bw-card-alert">أعلى من الميزانية بمقدار ' + card.overBudgetBy.toFixed(2) + ' ر.س</div>';
+      }
+      if (card.mismatchReason) {
+        alertHtml += '<div class="bw-card-alert">' + card.mismatchReason + '</div>';
+      }
+      const imgSrc = card.image || '';
+      const imgHtml = imgSrc
+        ? '<img src="' + escapeHtml(imgSrc) + '" alt="' + escapeHtml(card.name) + '" loading="lazy"/>'
+        : '<div class="bw-card-alert">لا تتوفر صورة — ' + escapeHtml(card.name) + '</div>';
+
+      return (
+        '<div class="bw-card' + (isBest ? ' is-best' : '') + '">' +
+        (isBest ? '<div class="bw-card-badge">الاختيار الأفضل</div>' : '') +
+        (roleLabel && !isBest ? '<div class="bw-card-role">' + escapeHtml(roleLabel) + '</div>' : '') +
+        imgHtml +
+        '<div class="bw-card-name">' + escapeHtml(card.name) + '</div>' +
+        priceBlockHtml(card) +
+        (card.availableSizes && card.availableSizes.length
+          ? '<div class="bw-size-note">المقاسات المتاحة: ' + card.availableSizes.join('، ') + '</div>'
+          : '') +
+        alertHtml +
+        (card.url
+          ? '<a class="bw-card-cta" href="' + escapeHtml(card.url) + '" target="_blank" rel="noopener">عرض المنتج</a>'
+          : '<span class="bw-card-alert">رابط المنتج غير متاح حالياً</span>') +
+        (isBest && card.url ? '<a class="bw-card-cta-extra" href="' + escapeHtml(card.url) + '" target="_blank" rel="noopener">أضف للسلة</a>' : '') +
+        '</div>'
+      );
+    }
+
+    function renderResults() {
+      if (state.liveLoading) {
+        root.innerHTML =
+          '<div class="bw-state-box">' +
+          '<div class="bw-skeleton" style="width:60%;margin:0 auto"></div>' +
+          '<div class="bw-skeleton" style="width:40%;margin:8px auto"></div>' +
+          'جاري التحقق من المنتجات المتاحة…' +
+          '</div>';
+        return;
+      }
+      if (state.liveError || !state.live) {
+        root.innerHTML =
+          '<div class="bw-state-box">' +
+          '<p>تعذّر التحقق المباشر من التوفر والأسعار الآن.</p>' +
+          '<p>التوفر غير مؤكد حالياً — الرجاء المحاولة مرة أخرى بعد قليل.</p>' +
+          '<div class="bw-restart-row"><button class="bw-restart-btn" data-action="restart">↻ حاولي مرة أخرى</button></div>' +
+          '</div>';
+        root.querySelector('[data-action="restart"]').addEventListener('click', () => {
+          state.screen = 'hero';
+          state.stepIndex = 0;
+          render();
+        });
+        return;
+      }
+
+      const result = window.DecisionEngine.recommend(state.answers, {
+        catalog: window.BURJAH_PRODUCTS,
+        rankings: window.BURJAH_RANKINGS,
+        live: state.live,
+        skinToneColorWeights: SKIN_COLOR_WEIGHTS,
+      });
+
+      if (result.empty) {
+        root.innerHTML =
+          '<div class="bw-state-box">' +
+          '<p>' + escapeHtml(result.message || 'ما وجدنا خياراً يطابق كل الشروط.') + '</p>' +
+          '<div class="bw-restart-row"><button class="bw-restart-btn" data-action="restart">↻ غيّري إجاباتك</button></div>' +
+          '</div>';
+        root.querySelector('[data-action="restart"]').addEventListener('click', () => {
+          state.screen = 'question';
+          state.stepIndex = 0;
+          render();
+        });
+        return;
+      }
+
+      const suitableColors = {};
+      result.cards.forEach((c) => {
+        if (c.card.color) suitableColors[c.card.color] = COLOR_OPTIONS.find((o) => o.value === c.card.color) || { swatch: '#ccc' };
+      });
+
+      root.innerHTML =
+        '<div>' +
+        '<h2 class="bw-results-title">✨ اختيارنا الأنسب لطفلك</h2>' +
+        '<p class="bw-summary-line">العمر: ' + escapeHtml(state.answers.age) +
+        ' · المناسبة: ' + escapeHtml(state.answers.occasionChoice) +
+        ' · الميزانية: ' + escapeHtml(state.answers.budget) + ' ر.س</p>' +
+        '<div class="bw-cards-row">' + result.cards.map(cardHtml).join('') + '</div>' +
+        (Object.keys(suitableColors).length
+          ? '<div class="bw-suitable-colors"><h4>الألوان الأنسب لطفلك</h4><div class="bw-suitable-colors-row">' +
+            Object.entries(suitableColors).map(([name, o]) =>
+              '<span class="bw-suitable-color"><span style="background:' + o.swatch + '"></span>' + escapeHtml(name) + '</span>'
+            ).join('') + '</div></div>'
+          : '') +
+        '<p class="bw-availability-note">المقاسات تقريبية بناءً على العمر والمتوفر، والمرجع النهائي جدول المقاسات قبل إتمام الطلب.</p>' +
+        '<div class="bw-restart-row"><button class="bw-restart-btn" data-action="restart">↻ غيّري إجاباتك</button></div>' +
+        '</div>';
+
+      root.querySelector('[data-action="restart"]').addEventListener('click', () => {
+        state.screen = 'question';
+        state.stepIndex = 0;
+        render();
+      });
+    }
+
+    render();
+  }
+
+  function init() {
+    document.querySelectorAll('[data-burjah-widget]').forEach(mount);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+</script>

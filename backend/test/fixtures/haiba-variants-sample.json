@@ -1,0 +1,54 @@
+[
+  {
+    "id": 64814854,
+    "product_id": 2142939960,
+    "price": { "amount": 136.96, "currency": "SAR" },
+    "cost_price": { "amount": 80, "currency": "SAR" },
+    "sale_price": null,
+    "has_special_price": false,
+    "stock_quantity": 10,
+    "barcode": "718711057",
+    "sku": "",
+    "mpn": "718711057",
+    "name": "22 / أبيض"
+  },
+  {
+    "id": 1263041282,
+    "product_id": 2142939960,
+    "price": { "amount": 136.96, "currency": "SAR" },
+    "cost_price": { "amount": 80, "currency": "SAR" },
+    "sale_price": null,
+    "has_special_price": false,
+    "stock_quantity": 0,
+    "barcode": "668050423",
+    "sku": "",
+    "mpn": "668050423",
+    "name": "26 / أبيض"
+  },
+  {
+    "id": 904279065,
+    "product_id": 2142939960,
+    "price": { "amount": 136.96, "currency": "SAR" },
+    "cost_price": { "amount": 80, "currency": "SAR" },
+    "sale_price": null,
+    "has_special_price": false,
+    "stock_quantity": 12,
+    "barcode": "194333091",
+    "sku": "",
+    "mpn": "194333091",
+    "name": "49 / أبيض / 49 / 49 / 49 / 49 / 49 / 49 / 49"
+  },
+  {
+    "id": 2102636645,
+    "product_id": 2142939960,
+    "price": { "amount": 136.96, "currency": "SAR" },
+    "cost_price": { "amount": 80, "currency": "SAR" },
+    "sale_price": null,
+    "has_special_price": false,
+    "stock_quantity": 22,
+    "barcode": "516368117",
+    "sku": "",
+    "mpn": "516368117",
+    "name": "22 / أوف وايت / 22 / 22 / 22 / 22 / 22 / 22 / 22"
+  }
+]

@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: burjah-sync-backend
+    runtime: node
+    rootDir: backend
+    plan: starter
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: SALLA_API_TOKEN
+        sync: false # يُدخله المالك يدوياً من لوحة Render — لا يُرفع لأي ملف في المستودع
+      - key: SALLA_API_BASE_URL
+        value: https://api.salla.dev/admin/v2
+      - key: ALLOWED_ORIGIN
+        value: https://burjah.com
+      - key: NODE_VERSION
+        value: 20.11.0

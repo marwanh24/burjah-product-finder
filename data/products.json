@@ -1,0 +1,3500 @@
+{
+  "20869000": {
+    "id": 20869000,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "سماوي",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "22702539": {
+    "id": 22702539,
+    "excludeFromStandalone": true,
+    "family": "طقم العراقة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1179255884,
+      1097711035,
+      1172845662
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "35217922": {
+    "id": 35217922,
+    "family": "ميني سكارف",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "40711558": {
+    "id": 40711558,
+    "family": "ميني سكارف",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "66649037": {
+    "id": 66649037,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "70330785": {
+    "id": 70330785,
+    "family": "الأصالة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أوف وايت",
+    "colorCompat": "أوف وايت",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "94917960": {
+    "id": 94917960,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "106339781": {
+    "id": 106339781,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "119100182": {
+    "id": 119100182,
+    "family": "الساعات",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "167236188": {
+    "id": 167236188,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "198793024": {
+    "id": 198793024,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "240849998": {
+    "id": 240849998,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "241660433": {
+    "id": 241660433,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "247109260": {
+    "id": 247109260,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "249197326": {
+    "id": 249197326,
+    "family": "السبح الفاخرة",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "1-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "295316796": {
+    "id": 295316796,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "333405938": {
+    "id": 333405938,
+    "family": "بربتوز بيزنس كيدز",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "415690051": {
+    "id": 415690051,
+    "family": "بيزنس كيدز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "431600612": {
+    "id": 431600612,
+    "excludeFromStandalone": true,
+    "family": "طقم الأصالة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1740341873,
+      1423088233,
+      1579119821
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "442232196": {
+    "id": 442232196,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "475756765": {
+    "id": 475756765,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "488403802": {
+    "id": 488403802,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أوف وايت",
+    "season": null,
+    "colorType": [
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "520215680": {
+    "id": 520215680,
+    "family": "السبح الفاخرة",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "1-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "546634794": {
+    "id": 546634794,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "554285626": {
+    "id": 554285626,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "أسود",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "568900714": {
+    "id": 568900714,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "576778699": {
+    "id": 576778699,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "582169231": {
+    "id": 582169231,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "585654168": {
+    "id": 585654168,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أسود",
+    "season": null,
+    "colorType": [
+      "أسود"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "645064359": {
+    "id": 645064359,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "654522397": {
+    "id": 654522397,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "697801811": {
+    "id": 697801811,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "701586080": {
+    "id": 701586080,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "703135707": {
+    "id": 703135707,
+    "family": "كلاسيك 2",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "723936353": {
+    "id": 723936353,
+    "family": "نظارات أطفال",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "741262391": {
+    "id": 741262391,
+    "excludeFromStandalone": true,
+    "family": "طقم الأصالة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1740341873,
+      1423088233,
+      1579119821
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "759043357": {
+    "id": 759043357,
+    "family": "صندل جلد",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "804849479": {
+    "id": 804849479,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "812590588": {
+    "id": 812590588,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "819100028": {
+    "id": 819100028,
+    "family": "كلاسيك 2",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "863888434": {
+    "id": 863888434,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "882746827": {
+    "id": 882746827,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "889769611": {
+    "id": 889769611,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي غامق",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "890370559": {
+    "id": 890370559,
+    "family": "بيزنس كيدز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "892130700": {
+    "id": 892130700,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "898461215": {
+    "id": 898461215,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "922504616": {
+    "id": 922504616,
+    "family": "الرفعة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "946403147": {
+    "id": 946403147,
+    "family": "سديري بُرجة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "948849211": {
+    "id": 948849211,
+    "family": "بربتوز",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "977782911": {
+    "id": 977782911,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1001685420": {
+    "id": 1001685420,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1016769486": {
+    "id": 1016769486,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1017816716": {
+    "id": 1017816716,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1035028448": {
+    "id": 1035028448,
+    "family": "بربتوز العز",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorType": [
+      "أسود"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1044989526": {
+    "id": 1044989526,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1071770541": {
+    "id": 1071770541,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1077118593": {
+    "id": 1077118593,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي فاتح",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1083042171": {
+    "id": 1083042171,
+    "family": "الشموخ",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كموني",
+    "colorCompat": "أوف وايت",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1097711035": {
+    "id": 1097711035,
+    "family": "العراقة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1644720348,
+      22702539,
+      1689370233
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1099615887": {
+    "id": 1099615887,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1101568151": {
+    "id": 1101568151,
+    "note": "بربتوز الهيبة — لا يدخل مسار الطقم، مواليد فقط",
+    "family": "بربتوز الهيبة",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1121657063": {
+    "id": 1121657063,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1126666114": {
+    "id": 1126666114,
+    "family": "الروشان",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1151913706": {
+    "id": 1151913706,
+    "family": "الأصالة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": null,
+    "colorCompat": "varies",
+    "ageGroup": "مواليد",
+    "isMawalid": true,
+    "excludeFromStandalone": false
+  },
+  "1172845662": {
+    "id": 1172845662,
+    "family": "العراقة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1644720348,
+      22702539,
+      1689370233
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1179255884": {
+    "id": 1179255884,
+    "family": "العراقة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1644720348,
+      22702539,
+      1689370233
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1197521945": {
+    "id": 1197521945,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "1205800622": {
+    "id": 1205800622,
+    "family": "السبح الفاخرة",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "1-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1215354434": {
+    "id": 1215354434,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1240365053": {
+    "id": 1240365053,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أبيض",
+    "season": null,
+    "colorType": [
+      "أبيض"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1249102644": {
+    "id": 1249102644,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كحلي",
+    "season": null,
+    "colorType": [
+      "كحلي"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1261663722": {
+    "id": 1261663722,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1264758411": {
+    "id": 1264758411,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أسود",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1276614974": {
+    "id": 1276614974,
+    "family": "الروشان",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1278897044": {
+    "id": 1278897044,
+    "excludeFromStandalone": true,
+    "family": "طقم الهيبة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      2142939960,
+      2001973449,
+      812590588,
+      576778699
+    ],
+    "style": [
+      "هادئ وفخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1286835428": {
+    "id": 1286835428,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1296795808": {
+    "id": 1296795808,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1307592319": {
+    "id": 1307592319,
+    "family": "الرفعة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "بيج",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1343028383": {
+    "id": 1343028383,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1361373483": {
+    "id": 1361373483,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "رصاصي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "1365148497": {
+    "id": 1365148497,
+    "family": "الشموخ",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أسود",
+    "colorCompat": "الاثنين",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1385409065": {
+    "id": 1385409065,
+    "family": "الأصالة",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كحلي",
+    "colorCompat": "أبيض",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1398977643": {
+    "id": 1398977643,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1423088233": {
+    "id": 1423088233,
+    "family": "الأصالة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1946293942,
+      431600612,
+      741262391
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1434664687": {
+    "id": 1434664687,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1451703347": {
+    "id": 1451703347,
+    "family": "الروشان",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1460807930": {
+    "id": 1460807930,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1509466944": {
+    "id": 1509466944,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1556743946": {
+    "id": 1556743946,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1563950401": {
+    "id": 1563950401,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1579119821": {
+    "id": 1579119821,
+    "family": "الأصالة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1946293942,
+      431600612,
+      741262391
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1602543628": {
+    "id": 1602543628,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "كحلي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "1608345848": {
+    "id": 1608345848,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1610404332": {
+    "id": 1610404332,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1611518259": {
+    "id": 1611518259,
+    "family": "طقم الفخامة الشتوي",
+    "type": "طقم كامل",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الفخامة الشتوي",
+    "taqmRole": "طقم كامل",
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "شتوي",
+    "color": "بيج كموني",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "excludeFromStandalone": false
+  },
+  "1623074804": {
+    "id": 1623074804,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1627500556": {
+    "id": 1627500556,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "1644720348": {
+    "id": 1644720348,
+    "excludeFromStandalone": true,
+    "family": "طقم العراقة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1179255884,
+      1097711035,
+      1172845662
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1649130611": {
+    "id": 1649130611,
+    "family": "العراقة المستقل",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1668487917": {
+    "id": 1668487917,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1674818938": {
+    "id": 1674818938,
+    "family": "الحضارة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1677937890": {
+    "id": 1677937890,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1689370233": {
+    "id": 1689370233,
+    "excludeFromStandalone": true,
+    "family": "طقم العراقة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم العراقة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1179255884,
+      1097711035,
+      1172845662
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1708412751": {
+    "id": 1708412751,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1737714039": {
+    "id": 1737714039,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1738575942": {
+    "id": 1738575942,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1740341873": {
+    "id": 1740341873,
+    "family": "الأصالة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      1946293942,
+      431600612,
+      741262391
+    ],
+    "taqmStyle": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1760139841": {
+    "id": 1760139841,
+    "family": "الساعات",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1760340536": {
+    "id": 1760340536,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1761004349": {
+    "id": 1761004349,
+    "family": "كلاسيك",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زيارة",
+      "مدرسة",
+      "يومي"
+    ],
+    "style": [
+      "هادئ وبسيط"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "بسيط وعملي",
+    "excludeFromStandalone": false
+  },
+  "1775084579": {
+    "id": 1775084579,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "زيتي",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "1791107324": {
+    "id": 1791107324,
+    "family": "التميز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "1791454528": {
+    "id": 1791454528,
+    "family": "الجص الحساوي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1808952165": {
+    "id": 1808952165,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1836209164": {
+    "id": 1836209164,
+    "family": "الرفعة",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1871908626": {
+    "id": 1871908626,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1879206948": {
+    "id": 1879206948,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "رصاصي بحري",
+    "colorCompat": "أبيض",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  },
+  "1912347387": {
+    "id": 1912347387,
+    "family": "نظارات أطفال",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1946293942": {
+    "id": 1946293942,
+    "excludeFromStandalone": true,
+    "family": "طقم الأصالة",
+    "type": "سديري طقم",
+    "track": [
+      "طقم"
+    ],
+    "taqmFamily": "طقم الأصالة",
+    "taqmRole": "سديري",
+    "taqmPairIds": [
+      1740341873,
+      1423088233,
+      1579119821
+    ],
+    "style": [
+      "تفاصيل خفيفة أنيقة"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorType": [
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "1967237797": {
+    "id": 1967237797,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": null,
+    "colorCompat": "الاثنين",
+    "ageGroup": "مواليد",
+    "isMawalid": true,
+    "excludeFromStandalone": false
+  },
+  "1972114864": {
+    "id": 1972114864,
+    "family": "صندل جلد H",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "1980539415": {
+    "id": 1980539415,
+    "family": "الوقار",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "أبيض",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1988728910": {
+    "id": 1988728910,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "1995329713": {
+    "id": 1995329713,
+    "family": "شرقي",
+    "type": "إكسسوار مواليد",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "مواليد",
+    "compatibleWith": [
+      "بربتوز",
+      "سديري",
+      "دقلة",
+      "ثوب عادي مواليد"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "2001973449": {
+    "id": 2001973449,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "2004662672": {
+    "id": 2004662672,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "2028154067": {
+    "id": 2028154067,
+    "family": "الأندلسي",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "2028270246": {
+    "id": 2028270246,
+    "family": "المخملي",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "2084667959": {
+    "id": 2084667959,
+    "family": "طويق",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ بسيط"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "2090845131": {
+    "id": 2090845131,
+    "family": "الشموخ",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تفاصيل أو تطريز خفيف أنيق"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": null,
+    "colorCompat": "varies",
+    "ageGroup": "مواليد",
+    "isMawalid": true,
+    "excludeFromStandalone": false
+  },
+  "2095209306": {
+    "id": 2095209306,
+    "family": "نظارات أطفال",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "2101791437": {
+    "id": 2101791437,
+    "family": "العز",
+    "type": "ثوب",
+    "track": [
+      "ثوب"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية",
+      "مدرسة",
+      "يومي",
+      "بدون"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "season": "صيفي",
+    "luxury": "راقٍ ومتوازن",
+    "excludeFromStandalone": false
+  },
+  "2110595941": {
+    "id": 2110595941,
+    "family": "الساعات",
+    "type": "إكسسوار",
+    "track": [
+      "إكسسوار"
+    ],
+    "ageGroup": "5-12",
+    "compatibleWith": [
+      "ثوب",
+      "طقم",
+      "سديري مستقل",
+      "دقلة"
+    ],
+    "excludeFromStandalone": false,
+    "luxury": null
+  },
+  "2112026118": {
+    "id": 2112026118,
+    "family": "الفخر",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "varies",
+    "isMawalidMerged": true,
+    "excludeFromStandalone": false
+  },
+  "2127481995": {
+    "id": 2127481995,
+    "family": "بربتوز أندلسي",
+    "type": "بربتوز",
+    "track": [
+      "إطلالة مواليد"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح مميز"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "كموني",
+    "season": "شتوي",
+    "colorType": [
+      "ملوّن"
+    ],
+    "ageGroup": "مواليد",
+    "excludeFromStandalone": false
+  },
+  "2128937638": {
+    "id": 2128937638,
+    "family": "الشال",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "فاخر ومميز",
+    "colorCompat": "الاثنين",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "2133781076": {
+    "id": 2133781076,
+    "family": "ثقافتنا",
+    "type": "سديري",
+    "track": [
+      "سديري مستقل"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "تطريز خفيف"
+    ],
+    "luxury": "راقٍ ومتوازن",
+    "colorCompat": "أوف وايت",
+    "isMawalidMerged": false,
+    "excludeFromStandalone": false
+  },
+  "2142939960": {
+    "id": 2142939960,
+    "family": "الهيبة",
+    "type": "ثوب",
+    "track": [
+      "ثوب",
+      "طقم"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "زيارة",
+      "هدية"
+    ],
+    "style": [
+      "هادئ وبسيط",
+      "تفاصيل خفيفة وأنيقة"
+    ],
+    "colorType": [
+      "أبيض",
+      "أوف وايت"
+    ],
+    "season": null,
+    "luxury": "فاخر ومميز",
+    "excludeFromStandalone": false,
+    "taqmFamily": "طقم الهيبة",
+    "taqmRole": "ثوب",
+    "taqmPairIds": [
+      241660433,
+      1001685420,
+      645064359,
+      1278897044
+    ],
+    "taqmStyle": [
+      "هادئ وفخم"
+    ],
+    "taqmLuxury": "فاخر ومميز",
+    "taqmColorType": [
+      "أبيض",
+      "أوف وايت",
+      "ملوّن"
+    ],
+    "taqmSeason": "صيفي",
+    "occasions_taqm": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ]
+  },
+  "2143862071": {
+    "id": 2143862071,
+    "family": "الروشان",
+    "type": "دقلة",
+    "track": [
+      "دقلة"
+    ],
+    "occasions": [
+      "زواج",
+      "تصوير",
+      "عيد",
+      "هدية"
+    ],
+    "style": [
+      "تطريز واضح فخم"
+    ],
+    "luxury": "فاخر ومميز",
+    "color": "أوف وايت",
+    "colorCompat": "أوف وايت",
+    "ageGroup": "1-12",
+    "isMawalid": false,
+    "excludeFromStandalone": false
+  }
+}

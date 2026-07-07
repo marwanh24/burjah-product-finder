@@ -1,0 +1,17 @@
+{
+  "id": 2142939960,
+  "name": "ثوب الهيبة",
+  "status": "sale",
+  "is_available": true,
+  "cost_price": "80",
+  "sku": "",
+  "price": { "amount": 136.96, "currency": "SAR" },
+  "regular_price": { "amount": 217.39, "currency": "SAR" },
+  "sale_price": { "amount": 136.96, "currency": "SAR" },
+  "main_image": "https://cdn.salla.sa/ZqYBZ/ba28aece-5b3d-4a6d-88a8-ef127864b025-500x500-BUG3Ba1HXSlqSVhfertxBs2XT0kUivlaDJ4ZnblR.jpg",
+  "urls": {
+    "customer": "https://burjah.com/qGKWaWD",
+    "admin": "https://s.salla.sa/products/2142939960",
+    "product_card": "https://burjah.com/?product_id=2142939960"
+  }
+}

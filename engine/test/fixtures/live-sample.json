@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-07-07T00:00:00.000Z",
+  "products": {
+    "2142939960": {
+      "name": "ثوب الهيبة",
+      "status": "sale",
+      "visibleInWeb": true,
+      "eligible": true,
+      "image": "https://cdn.salla.sa/haiba.jpg",
+      "url": "https://burjah.com/haiba",
+      "basePrice": 120,
+      "salePrice": null,
+      "hasDiscount": false,
+      "availableSizes": { "أبيض": [34, 36, 38], "أوف وايت": [34, 36] }
+    },
+    "1179255884": {
+      "name": "ثوب العراقة",
+      "status": "sale",
+      "visibleInWeb": true,
+      "eligible": true,
+      "image": "https://cdn.salla.sa/iraqah.jpg",
+      "url": "https://burjah.com/iraqah",
+      "basePrice": 217.39,
+      "salePrice": 130.43,
+      "hasDiscount": true,
+      "availableSizes": { "أبيض": [34, 36] }
+    },
+    "1434664687": {
+      "name": "ثوب العز",
+      "status": "sale",
+      "visibleInWeb": true,
+      "eligible": true,
+      "image": "https://cdn.salla.sa/ezz.jpg",
+      "url": "https://burjah.com/ezz",
+      "basePrice": 69.57,
+      "salePrice": null,
+      "hasDiscount": false,
+      "availableSizes": { "أوف وايت": [34, 38] }
+    },
+    "415690051": {
+      "name": "ثوب بيزنس كيدز",
+      "status": "sale",
+      "visibleInWeb": true,
+      "eligible": true,
+      "image": "https://cdn.salla.sa/bk.jpg",
+      "url": "https://burjah.com/bk",
+      "basePrice": 250,
+      "salePrice": null,
+      "hasDiscount": false,
+      "availableSizes": { "أبيض": [34] }
+    },
+    "2028154067": {
+      "name": "ثوب الأندلسي",
+      "status": "sale",
+      "visibleInWeb": true,
+      "eligible": true,
+      "image": "https://cdn.salla.sa/andalusi.jpg",
+      "url": "https://burjah.com/andalusi",
+      "basePrice": 180,
+      "salePrice": null,
+      "hasDiscount": false,
+      "availableSizes": { "أبيض": [34] }
+    },
+    "1740341873": {
+      "name": "ثوب الأصالة",
+      "status": "sale",
+      "visibleInWeb": true,
+      "eligible": true,
+      "image": "https://cdn.salla.sa/asalah.jpg",
+      "url": "https://burjah.com/asalah",
+      "basePrice": 200,
+      "salePrice": null,
+      "hasDiscount": false,
+      "availableSizes": { "أخضر": [34] }
+    },
+    "241660433": {
+      "name": "سديري طقم الهيبة (أوف وايت)",
+      "status": "sale",
+      "visibleInWeb": true,
+      "eligible": true,
+      "image": "https://cdn.salla.sa/haiba-vest.jpg",
+      "url": "https://burjah.com/haiba-vest",
+      "basePrice": 80,
+      "salePrice": null,
+      "hasDiscount": false,
+      "availableSizes": { "أوف وايت": [14, 16] }
+    },
+    "1001685420": {
+      "name": "سديري طقم الهيبة (أبيض)",
+      "status": "out",
+      "visibleInWeb": true,
+      "eligible": false,
+      "availableSizes": {}
+    }
+  }
+}
